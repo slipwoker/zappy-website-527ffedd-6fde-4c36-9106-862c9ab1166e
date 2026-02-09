@@ -347,3 +347,303 @@ window.onload = function() {
         initContactFormIntegration();
     }
 })();
+
+
+/* ZAPPY_PUBLISHED_LIGHTBOX_RUNTIME */
+(function(){
+  try {
+    if (window.__zappyPublishedLightboxInit) return;
+    window.__zappyPublishedLightboxInit = true;
+
+    function safeText(s){ try { return String(s || '').replace(/"/g,'&quot;'); } catch(e){ return ''; } }
+
+    function ensureOverlayForToggle(toggle){
+      try {
+        if (!toggle || !toggle.id) return;
+        if (toggle.id.indexOf('zappy-lightbox-toggle-') !== 0) return;
+        var elementId = toggle.id.replace('zappy-lightbox-toggle-','');
+        var label = document.querySelector('label.zappy-lightbox-trigger[for="' + toggle.id + '"]');
+        if (!label) return;
+
+        // If toggle is inside the label (corrupted), move it before the label so the for attribute works consistently.
+        try {
+          if (label.contains(toggle) && label.parentNode) {
+            label.parentNode.insertBefore(toggle, label);
+          }
+        } catch (e0) {}
+
+        var lightboxId = 'zappy-lightbox-' + elementId;
+        var lb = document.getElementById(lightboxId);
+        if (lb && lb.parentNode !== document.body) {
+          try { document.body.appendChild(lb); } catch (eMove) {}
+        }
+
+        if (!lb) {
+          var img = null;
+          try { img = label.querySelector('img'); } catch (eImg0) {}
+          if (!img) {
+            try { img = document.querySelector('img[data-element-id="' + elementId + '"]'); } catch (eImg1) {}
+          }
+          if (!img) return;
+
+          lb = document.createElement('div');
+          lb.id = lightboxId;
+          lb.className = 'zappy-lightbox';
+          lb.setAttribute('data-zappy-image-lightbox','true');
+          lb.style.display = 'none';
+          lb.innerHTML =
+            '<label class="zappy-lightbox-backdrop" for="' + toggle.id + '" aria-label="Close"></label>' +
+            '<div class="zappy-lightbox-content">' +
+              '<label class="zappy-lightbox-close" for="' + toggle.id + '" aria-label="Close">×</label>' +
+              '<img class="zappy-lightbox-image" src="' + safeText(img.currentSrc || img.src || img.getAttribute('src')) + '" alt="' + safeText(img.getAttribute('alt') || 'Image') + '">' +
+            '</div>';
+          document.body.appendChild(lb);
+        }
+
+        // Keep overlay image in sync at open time (in case src changed / responsive currentSrc)
+        function syncOverlayImage(){
+          try {
+            var imgCur = label.querySelector('img');
+            var imgLb = lb.querySelector('img');
+            if (imgCur && imgLb) {
+              imgLb.src = imgCur.currentSrc || imgCur.src || imgLb.src;
+              imgLb.alt = imgCur.alt || imgLb.alt;
+            }
+          } catch (eSync) {}
+        }
+
+        if (!toggle.__zappyLbBound) {
+          toggle.addEventListener('change', function(){
+            if (toggle.checked) syncOverlayImage();
+            lb.style.display = toggle.checked ? 'flex' : 'none';
+          });
+          toggle.__zappyLbBound = true;
+        }
+
+        if (!lb.__zappyLbBound) {
+          lb.addEventListener('click', function(ev){
+            try {
+              var t = ev.target;
+              if (!t) return;
+              if (t.classList && (t.classList.contains('zappy-lightbox-backdrop') || t.classList.contains('zappy-lightbox-close'))) {
+                ev.preventDefault();
+                toggle.checked = false;
+                lb.style.display = 'none';
+              }
+            } catch (e2) {}
+          });
+          lb.__zappyLbBound = true;
+        }
+
+        if (!label.__zappyLbClick) {
+          label.addEventListener('click', function(ev){
+            try {
+              if (document.body && document.body.classList && document.body.classList.contains('zappy-edit-mode')) return;
+              if (ev && ev.target && ev.target.closest && ev.target.closest('a[href],button,input,select,textarea')) return;
+              ev.preventDefault();
+              ev.stopPropagation();
+              toggle.checked = true;
+              syncOverlayImage();
+              lb.style.display = 'flex';
+            } catch (e3) {}
+          }, true);
+          label.__zappyLbClick = true;
+        }
+      } catch (e) {}
+    }
+
+    function initZappyPublishedLightboxes(){
+      try {
+        // Repair orphaned labels (label has for=toggleId but input is missing)
+        var orphanLabels = document.querySelectorAll('label.zappy-lightbox-trigger[for^="zappy-lightbox-toggle-"]');
+        for (var i=0;i<orphanLabels.length;i++){
+          var lbl = orphanLabels[i];
+          var forId = lbl && lbl.getAttribute ? lbl.getAttribute('for') : null;
+          if (!forId) continue;
+          if (!document.getElementById(forId)) {
+            var t = document.createElement('input');
+            t.type = 'checkbox';
+            t.id = forId;
+            t.className = 'zappy-lightbox-toggle';
+            t.setAttribute('data-zappy-image-lightbox','true');
+            if (lbl.parentNode) lbl.parentNode.insertBefore(t, lbl);
+          }
+        }
+
+        var toggles = document.querySelectorAll('input.zappy-lightbox-toggle[id^="zappy-lightbox-toggle-"]');
+        for (var j=0;j<toggles.length;j++){
+          ensureOverlayForToggle(toggles[j]);
+        }
+
+        // Close on ESC if any lightbox is open
+        if (!document.__zappyLbEscBound) {
+          document.addEventListener('keydown', function(ev){
+            try {
+              if (!ev || ev.key !== 'Escape') return;
+              var openLb = document.querySelector('.zappy-lightbox[style*="display: flex"]');
+              if (openLb) {
+                var openToggle = null;
+                try {
+                  var id = openLb.id || '';
+                  if (id.indexOf('zappy-lightbox-') === 0) {
+                    openToggle = document.getElementById('zappy-lightbox-toggle-' + id.replace('zappy-lightbox-',''));
+                  }
+                } catch (e4) {}
+                if (openToggle) openToggle.checked = false;
+                openLb.style.display = 'none';
+              }
+            } catch (e5) {}
+          });
+          document.__zappyLbEscBound = true;
+        }
+      } catch (eInit) {}
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initZappyPublishedLightboxes, { once: true });
+    } else {
+      initZappyPublishedLightboxes();
+    }
+  } catch (eOuter) {}
+})();
+/* END ZAPPY_PUBLISHED_LIGHTBOX_RUNTIME */
+
+
+/* ZAPPY_MOBILE_MENU_TOGGLE */
+(function(){
+  try {
+    if (window.__zappyMobileMenuToggleInit) return;
+    window.__zappyMobileMenuToggleInit = true;
+
+    function initMobileToggle() {
+      var toggle = document.querySelector('.mobile-toggle, #mobileToggle');
+      var navMenu = document.querySelector('#navMenu, .nav-menu, .navbar-menu');
+      if (!toggle || !navMenu) return;
+
+      // Skip if this toggle already has a click handler from the site's own JS
+      if (toggle.__zappyMobileToggleBound) return;
+      toggle.__zappyMobileToggleBound = true;
+
+      toggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        var hamburgerIcon = toggle.querySelector('.hamburger-icon');
+        var closeIcon = toggle.querySelector('.close-icon');
+        var isOpen = navMenu.classList.contains('active') || navMenu.style.display === 'block';
+
+        if (isOpen) {
+          navMenu.classList.remove('active');
+          navMenu.style.display = '';
+          if (hamburgerIcon) hamburgerIcon.style.setProperty('display', 'block', 'important');
+          if (closeIcon) closeIcon.style.setProperty('display', 'none', 'important');
+          document.body.style.overflow = '';
+        } else {
+          navMenu.classList.add('active');
+          navMenu.style.display = 'block';
+          if (hamburgerIcon) hamburgerIcon.style.setProperty('display', 'none', 'important');
+          if (closeIcon) closeIcon.style.setProperty('display', 'block', 'important');
+          document.body.style.overflow = 'hidden';
+        }
+      }, true);
+
+      // Close on clicking outside
+      document.addEventListener('click', function(e) {
+        if (!navMenu.classList.contains('active')) return;
+        if (toggle.contains(e.target) || navMenu.contains(e.target)) return;
+        navMenu.classList.remove('active');
+        navMenu.style.display = '';
+        var hi = toggle.querySelector('.hamburger-icon');
+        var ci = toggle.querySelector('.close-icon');
+        if (hi) hi.style.setProperty('display', 'block', 'important');
+        if (ci) ci.style.setProperty('display', 'none', 'important');
+        document.body.style.overflow = '';
+      });
+
+      // Close on Escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+          navMenu.classList.remove('active');
+          navMenu.style.display = '';
+          var hi = toggle.querySelector('.hamburger-icon');
+          var ci = toggle.querySelector('.close-icon');
+          if (hi) hi.style.setProperty('display', 'block', 'important');
+          if (ci) ci.style.setProperty('display', 'none', 'important');
+          document.body.style.overflow = '';
+        }
+      });
+
+      // Close when clicking a nav link (navigating)
+      navMenu.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', function() {
+          navMenu.classList.remove('active');
+          navMenu.style.display = '';
+          var hi = toggle.querySelector('.hamburger-icon');
+          var ci = toggle.querySelector('.close-icon');
+          if (hi) hi.style.setProperty('display', 'block', 'important');
+          if (ci) ci.style.setProperty('display', 'none', 'important');
+          document.body.style.overflow = '';
+        });
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initMobileToggle, { once: true });
+    } else {
+      initMobileToggle();
+    }
+  } catch (e) {}
+})();
+/* END ZAPPY_MOBILE_MENU_TOGGLE */
+
+
+/* ZAPPY_FAQ_ACCORDION_TOGGLE */
+(function(){
+  try {
+    if (window.__zappyFaqToggleInit) return;
+    window.__zappyFaqToggleInit = true;
+
+    function initFaqToggle() {
+      // Match both exact (.faq-item) and page-prefixed (e.g. .home-faq-item) classes
+      var items = document.querySelectorAll('[class*="faq-item"], .accordion-item');
+      if (!items.length) return;
+
+      items.forEach(function(item) {
+        var question = item.querySelector(
+          '[class*="faq-question"], [class*="faq-header"], .accordion-header, .accordion-toggle'
+        );
+        if (!question) return;
+        if (question.__zappyFaqBound) return;
+        question.__zappyFaqBound = true;
+
+        question.addEventListener('click', function(e) {
+          e.preventDefault();
+
+          // Close sibling items in the same accordion group
+          var parent = item.parentElement;
+          if (parent) {
+            var siblings = parent.querySelectorAll('[class*="faq-item"], .accordion-item');
+            siblings.forEach(function(sib) {
+              if (sib !== item && sib.classList.contains('active')) {
+                sib.classList.remove('active');
+                var sibQ = sib.querySelector('[class*="faq-question"], [class*="faq-header"], .accordion-header');
+                if (sibQ) sibQ.setAttribute('aria-expanded', 'false');
+              }
+            });
+          }
+
+          // Toggle current item
+          var isActive = item.classList.toggle('active');
+          question.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+        });
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initFaqToggle, { once: true });
+    } else {
+      initFaqToggle();
+    }
+  } catch (e) {}
+})();
+/* END ZAPPY_FAQ_ACCORDION_TOGGLE */
