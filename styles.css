@@ -680,6 +680,194 @@ body.accessibility-widget-visible ._access-menu {
   }
 }
 
+/* Added Component Styles */
+
+
+/* Added Component Styles */
+
+
+/* Added Component Styles */
+
+
+/* Added Component Styles */
+
+
+/* Added Component Styles */
+
+
+/* Added Component Styles */
+
+
+/* Added Component Styles */
+
+
+/* Added Component Styles */
+
+
+/* Added Component Styles */
+
+
+/* Added Component Styles */
+
+
+/* Added Component Styles */
+
+
+/* Added Component Styles */
+
+
+/* Added Component Styles */
+.image-grid-section {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, var(--secondary-color) 0%, #ffffff 100%);
+  direction: rtl;
+}
+
+.image-grid-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.image-grid-section .grid-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+  align-items: start;
+}
+
+.image-grid-section .grid-item {
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.image-grid-section .grid-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 30px rgba(107, 155, 209, 0.2);
+}
+
+.image-grid-section .image-container {
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+  position: relative;
+  background: var(--secondary-color);
+}
+
+.image-grid-section .grid-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  cursor: pointer;
+}
+
+.image-grid-section .grid-item:hover .grid-image {
+  transform: scale(1.05);
+}
+
+.image-grid-section .content-box {
+  padding: 30px 25px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.image-grid-section .grid-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  line-height: 1.3;
+  transition: color 0.3s ease;
+}
+
+.image-grid-section .grid-item:hover .grid-title {
+  color: var(--primary-color);
+}
+
+.image-grid-section .grid-text {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #5a6c7d;
+  margin: 0;
+  font-family: system-ui, sans-serif;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .image-grid-section {
+    padding: 60px 15px;
+  }
+
+  .image-grid-section .grid-wrapper {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .image-grid-section .image-container {
+    height: 240px;
+  }
+
+  .image-grid-section .content-box {
+    padding: 25px 20px;
+  }
+
+  .image-grid-section .grid-title {
+    font-size: 1.3rem;
+  }
+
+  .image-grid-section .grid-text {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .image-grid-section {
+    padding: 40px 15px;
+  }
+
+  .image-grid-section .image-container {
+    height: 200px;
+  }
+
+  .image-grid-section .content-box {
+    padding: 20px 15px;
+    gap: 12px;
+  }
+
+  .image-grid-section .grid-title {
+    font-size: 1.2rem;
+  }
+
+  .image-grid-section .grid-text {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .image-grid-section .grid-item,
+  .image-grid-section .grid-image,
+  .image-grid-section .grid-title {
+    transition: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .image-grid-section .grid-item {
+    border: 2px solid var(--text-color);
+  }
+}
+
 /* ========== RTL MOBILE NAVBAR FIX (zappy-rtl-mobile-fix) ========== */
 /* High-specificity rules to ensure RTL positioning wins over any [lang="en"] conflicts */
 /* For RTL sites: hamburger on RIGHT, phone on LEFT (mirror of LTR layout) */
@@ -724,6 +912,46 @@ body.accessibility-widget-visible ._access-menu {
 }
 
 /* ========== END RTL MOBILE NAVBAR FIX ========== */
+
+
+/* ========== NAV CONTAINER MIN-HEIGHT FIX (nav-container-min-height-fix) ========== */
+/* On mobile, all nav children are position:absolute/fixed (out of flow), */
+/* so height:auto collapses to 0px. min-height ensures the navbar is visible. */
+
+@media (max-width: 768px) {
+  .nav-container {
+    min-height: 70px !important;
+    position: relative !important;
+  }
+  /* Reset nav-cta-container desktop styling (box-shadow/padding) on mobile */
+  .nav-cta-container {
+    box-shadow: none !important;
+    padding: 0 !important;
+  }
+  /* Hide nav-cta-container when no lang-switcher (only CTA btn, which is hidden on mobile) */
+  .nav-cta-container:not(:has(.lang-switcher)) {
+    display: none !important;
+  }
+}
+
+/* ========== END NAV CONTAINER MIN-HEIGHT FIX ========== */
+
+
+/* ========== HERO IMAGE GRADIENT FIX (hero-image-gradient-fix) ========== */
+/* Prevent hero image fade gradient from bleeding over headline text below. */
+/* The .image-fade-gradient has bottom: -30px which extends below its parent; */
+/* on mobile stacked layout this overlaps the h1 text. */
+
+@media (max-width: 768px) {
+  .hero-image-column {
+    overflow: hidden !important;
+  }
+  .image-fade-gradient {
+    bottom: 0 !important;
+  }
+}
+
+/* ========== END HERO IMAGE GRADIENT FIX ========== */
 
 
 /* ========== GRID RESPONSIVE FIX (zappy-grid-mobile-fix) ========== */
