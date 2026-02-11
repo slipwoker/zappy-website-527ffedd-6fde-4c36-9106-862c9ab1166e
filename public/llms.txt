@@ -1,4 +1,6 @@
-# Business — Generative Engine Optimization Map
+# SERENITY TRAVEL — Generative Engine Optimization Map
+
+> A תיירות ונסיעות business.
 
 ---
 
@@ -42,7 +44,15 @@ Information about WCAG compliance and accessibility features.
 
 # Business Context (for LLM understanding)
 
-## About Business
+## About SERENITY TRAVEL
+SERENITY TRAVEL is a business in the תיירות ונסיעות industry.
+
+## Target Audience
+משפחות
+
+## Industry
+תיירות ונסיעות
+
 ---
 
 # Additional Resources
