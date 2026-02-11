@@ -1,28 +1,26 @@
-# SERENITY TRAVEL — Generative Engine Optimization Map
-
-> A תיירות ונסיעות business.
+# Business — Generative Engine Optimization Map
 
 ---
 
 ## Pages
 
-### בית
+### חוויות נופש בלתי נשכחות עם טיולים מאורגנים — SERENITY TRAVEL
 https://serenity-travel.co.il
 גלו טיולים מאורגנים איכותיים למשפחות עם SERENITY TRAVEL. דילים וחבילות נופש בהתאמה אישית לחופשה מושלמת. צרו קשר עוד היום!
 
-### חבילות נופש
+### אודות SERENITY TRAVEL - מומחים בטיולים מאורגנים — SERENITY TRAVEL
+https://serenity-travel.co.il/about-us
+הכירו את SERENITY TRAVEL - מובילים בארגון טיולים מאורגנים וחבילות נופש בהתאמה אישית למשפחות. למעלה מעשור של ניסיון, מאות לקוחות מרוצים וחוויות בלתי נשכחות.
+
+### חבילות דילים וחבילות נופש מותאמות אישית — SERENITY TRAVEL
 https://serenity-travel.co.il/packages
 מגוון רחב של דילים וחבילות נופש מותאמות אישית למשפחות. טיולים מאורגנים ליעדים הכי מבוקשים בעולם במחירים הוגנים. גלו את החבילה המושלמת עבורכם!
 
-### יעדים
+### יעדי נופש מובילים עם טיולים מאורגנים — SERENITY TRAVEL
 https://serenity-travel.co.il/destinations
 גלו את היעדים המובילים שלנו לטיולים מאורגנים. מאירופה ועד אסיה, אנחנו מציעים חבילות נופש בהתאמה אישית לכל יעד בעולם. בחרו את היעד הבא שלכם!
 
-### אודות
-https://serenity-travel.co.il/about
-הכירו את SERENITY TRAVEL - מובילים בארגון טיולים מאורגנים וחבילות נופש בהתאמה אישית למשפחות. למעלה מעשור של ניסיון, מאות לקוחות מרוצים וחוויות בלתי נשכחות.
-
-### צור קשר
+### צור קשר עם SERENITY TRAVEL - התחל לתכנן את החופשה שלך — SERENITY TRAVEL
 https://serenity-travel.co.il/contact
 צרו קשר עם SERENITY TRAVEL עוד היום. המומחים שלנו לטיולים מאורגנים ודילים וחבילות נופש זמינים לענות על כל שאלה ולעזור לכם לתכנן את החופשה המושלמת.
 
@@ -44,15 +42,7 @@ Information about WCAG compliance and accessibility features.
 
 # Business Context (for LLM understanding)
 
-## About SERENITY TRAVEL
-SERENITY TRAVEL is a business in the תיירות ונסיעות industry.
-
-## Target Audience
-משפחות
-
-## Industry
-תיירות ונסיעות
-
+## About Business
 ---
 
 # Additional Resources
