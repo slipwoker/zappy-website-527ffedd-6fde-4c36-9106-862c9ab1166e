@@ -97,8 +97,8 @@
             }
             
             /* Menu Group styling (non-clickable parent) - TOP LEVEL ONLY with ultra-specific selector */
-            .nav-menu &gt; li &gt; .menu-group-title,
-            #navMenu &gt; li &gt; .menu-group-title {
+            .nav-menu > li > .menu-group-title,
+            #navMenu > li > .menu-group-title {
               display: inline-block !important;
               padding: 0.5rem 1rem !important;
               color: var(--nav-color) !important;
@@ -112,13 +112,13 @@
               transition: color 0.3s ease !important;
             }
             
-            .nav-menu &gt; li &gt; .menu-group-title:hover,
-            #navMenu &gt; li &gt; .menu-group-title:hover {
+            .nav-menu > li > .menu-group-title:hover,
+            #navMenu > li > .menu-group-title:hover {
               color: var(--nav-hover-color) !important;
             }
             
             /* Desktop: show submenu on Menu Group hover */
-            li:has(.menu-group-title):hover &gt; .sub-menu {
+            li:has(.menu-group-title):hover > .sub-menu {
               opacity: 1 !important;
               visibility: visible !important;
               transform: translateY(0) !important;
@@ -127,7 +127,7 @@
             
             /* Hide menu items marked as hidden (overrides hover states) */
             .zappy-hidden-menu-item,
-            li:has(.menu-group-title):hover &gt; .sub-menu .zappy-hidden-menu-item {
+            li:has(.menu-group-title):hover > .sub-menu .zappy-hidden-menu-item {
               display: none !important;
               opacity: 0 !important;
               visibility: hidden !important;
@@ -180,9 +180,9 @@
             }
             
             /* Show submenu on parent hover - more specific selectors */
-            .nav-menu li:hover &gt; .sub-menu,
-            nav li:hover &gt; .sub-menu,
-            .navbar li:hover &gt; .sub-menu {
+            .nav-menu li:hover > .sub-menu,
+            nav li:hover > .sub-menu,
+            .navbar li:hover > .sub-menu {
               opacity: 1 !important;
               visibility: visible !important;
               transform: translateY(0) !important;
@@ -220,8 +220,8 @@
             }
             
             /* CRITICAL: Override submenu styles for TOP-LEVEL Menu Groups only - must come AFTER submenu styles */
-            .nav-menu &gt; li &gt; .menu-group-title,
-            #navMenu &gt; li &gt; .menu-group-title {
+            .nav-menu > li > .menu-group-title,
+            #navMenu > li > .menu-group-title {
               display: inline-block !important;
               padding: 0.5rem 1rem !important;
               color: var(--nav-color) !important;
@@ -235,8 +235,8 @@
               transition: color 0.3s ease !important;
             }
             
-            .nav-menu &gt; li &gt; .menu-group-title:hover,
-            #navMenu &gt; li &gt; .menu-group-title:hover {
+            .nav-menu > li > .menu-group-title:hover,
+            #navMenu > li > .menu-group-title:hover {
               color: var(--nav-hover-color) !important;
               background-color: transparent !important;
             }
@@ -277,18 +277,18 @@
               }
               
               /* Disable hover behavior on mobile */
-              .nav-menu li:hover &gt; .sub-menu,
-              nav li:hover &gt; .sub-menu,
-              .navbar li:hover &gt; .sub-menu {
+              .nav-menu li:hover > .sub-menu,
+              nav li:hover > .sub-menu,
+              .navbar li:hover > .sub-menu {
                 opacity: 0;
                 visibility: hidden;
                 pointer-events: none;
               }
               
               /* Enable visibility for expanded submenus */
-              .nav-menu li &gt; .sub-menu.mobile-expanded,
-              nav li &gt; .sub-menu.mobile-expanded,
-              .navbar li &gt; .sub-menu.mobile-expanded {
+              .nav-menu li > .sub-menu.mobile-expanded,
+              nav li > .sub-menu.mobile-expanded,
+              .navbar li > .sub-menu.mobile-expanded {
                 opacity: 1 !important;
                 visibility: visible !important;
                 pointer-events: auto !important;
@@ -314,23 +314,23 @@
               }
               
               /* Parent link - takes most space, allows navigation */
-              .nav-menu li:has(.sub-menu) &gt; a,
-              nav li:has(.sub-menu) &gt; a,
-              .navbar li:has(.sub-menu) &gt; a,
-              .nav-menu &gt; li &gt; .menu-group-title,
-              #navMenu &gt; li &gt; .menu-group-title {
+              .nav-menu li:has(.sub-menu) > a,
+              nav li:has(.sub-menu) > a,
+              .navbar li:has(.sub-menu) > a,
+              .nav-menu > li > .menu-group-title,
+              #navMenu > li > .menu-group-title {
                 flex: 1 !important;
               }
               
               /* HIDE EXISTING CHEVRONS/ARROWS from cloned sites to prevent duplicates */
-              .nav-menu li:has(.sub-menu) &gt; a .fa-chevron-down,
-              .nav-menu li:has(.sub-menu) &gt; a .fa-angle-down,
-              .nav-menu li:has(.sub-menu) &gt; a [class*="chevron"],
-              .nav-menu li:has(.sub-menu) &gt; a [class*="arrow"],
-              nav li:has(.sub-menu) &gt; a [class*="chevron"],
-              nav li:has(.sub-menu) &gt; a [class*="arrow"],
-              #navMenu li:has(.sub-menu) &gt; a [class*="chevron"],
-              #navMenu li:has(.sub-menu) &gt; a [class*="arrow"] {
+              .nav-menu li:has(.sub-menu) > a .fa-chevron-down,
+              .nav-menu li:has(.sub-menu) > a .fa-angle-down,
+              .nav-menu li:has(.sub-menu) > a [class*="chevron"],
+              .nav-menu li:has(.sub-menu) > a [class*="arrow"],
+              nav li:has(.sub-menu) > a [class*="chevron"],
+              nav li:has(.sub-menu) > a [class*="arrow"],
+              #navMenu li:has(.sub-menu) > a [class*="chevron"],
+              #navMenu li:has(.sub-menu) > a [class*="arrow"] {
                 display: none !important;
                 visibility: hidden !important;
               }
@@ -368,9 +368,9 @@
               }
               
               /* Submenu takes full width below parent */
-              .nav-menu li:has(.sub-menu) &gt; .sub-menu,
-              nav li:has(.sub-menu) &gt; .sub-menu,
-              .navbar li:has(.sub-menu) &gt; .sub-menu {
+              .nav-menu li:has(.sub-menu) > .sub-menu,
+              nav li:has(.sub-menu) > .sub-menu,
+              .navbar li:has(.sub-menu) > .sub-menu {
                 flex-basis: 100% !important;
                 width: 100% !important;
               }
@@ -390,10 +390,10 @@
             (function() {
               function initMobileMenuToggles() {
                 // Only run on mobile
-                if (window.innerWidth &gt; 768) {
+                if (window.innerWidth > 768) {
                   // Remove any toggle buttons on desktop
-                  document.querySelectorAll('.mobile-submenu-toggle').forEach(btn =&gt; btn.remove());
-                  document.querySelectorAll('.sub-menu.mobile-expanded').forEach(menu =&gt; {
+                  document.querySelectorAll('.mobile-submenu-toggle').forEach(btn => btn.remove());
+                  document.querySelectorAll('.sub-menu.mobile-expanded').forEach(menu => {
                     menu.classList.remove('mobile-expanded');
                   });
                   console.log('[MOBILE MENU] Desktop mode - cleanup done');
@@ -416,7 +416,7 @@
                   }
                   
                   const submenu = li.querySelector('.sub-menu');
-                  const parentLink = li.querySelector(':scope &gt; a') || li.querySelector(':scope &gt; .menu-group-title');
+                  const parentLink = li.querySelector(':scope > a') || li.querySelector(':scope > .menu-group-title');
                   
                   if (!submenu || !parentLink) return;
                   
@@ -476,7 +476,7 @@
               // This handles cases where the mobile menu is hidden initially
               const observer = new MutationObserver(function(mutations) {
                 mutations.forEach(function(mutation) {
-                  if (mutation.type === 'attributes' &amp;&amp; mutation.attributeName === 'class') {
+                  if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
                     const target = mutation.target;
                     if (target.classList.contains('active') || target.style.display !== 'none') {
                       console.log('[MOBILE MENU] Mobile menu became visible, re-initializing...');
@@ -710,15 +710,15 @@
 </a>
 </div>
 <button class="mobile-toggle" id="mobileToggle" aria-label="פתח תפריט" data-element-type="button" data-element-id="btn-1768821115860-ncgbvyy50" data-native-element="true">
-<svg class="hamburger-icon" width="24" height="24" viewbox="0 0 24 24" fill="none">
+<svg class="hamburger-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
 <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
 </svg>
-<svg class="close-icon" width="24" height="24" viewbox="0 0 24 24" fill="none" style="display: none;">
+<svg class="close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" style="display: none;">
 <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
 </svg>
 </button>
 <button class="phone-header-btn" aria-label="התקשר אלינו" data-element-type="button" data-element-id="btn-1768821115860-pg775en4d" data-native-element="true">
-<svg width="20" height="20" viewbox="0 0 24 24" fill="currentColor">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
 </svg>
 </button>
@@ -756,10 +756,10 @@
 SERENITY TRAVEL
 
 </h3>
-        <p style="font-size: 16px; line-height: 1.6; color: rgb(44, 62, 80); opacity: 0.8; font-family: system-ui, -apple-system, sans-serif; margin-bottom: 20px;">&nbsp; סוכנות נסיעות שמתמחה במסעות רגועים,אלגנטיים ומותאמים אישית.<br><br></p><p style="">אנחנו כאן כדי להפוך כל חלום למסע. אחרי שנים של אהבה לטיולים, תרבויות ואנשים, החלטנו להפוך את התשוקה שלנו למקצוע  וללוות אתכם בדרך לחוויות בלתי נשכחות.אנחנו מאמינים שמסע טוב מתחיל בשלווה, ממשיך בדיוק ומסתיים בזיכרונות שיישארו איתכם לתמיד.</p>ב Serenity Travel תמצאו ליווי אישי, הקשבה אמיתית, ותכנון מדויק<br><br>בין אם אתם מחפשים חופשה רומנטית, טיול משפחתי, או חוויה יוקרתית מעבר לים.<br><br>לגלות את העולם בשלווה - זה לא רק סלוגן, זו דרך חיים.  אנחנו כאן כדי להפוך כל חלום למסע.<br><br>אחרי שנים של אהבה לטיולים, תרבויות ואנשים, החלטנו להפוך את התשוקה שלנו למקצוע וללוות אתכם בדרך לחוויות בלתי נשכחות.<br><br>אנחנו מאמינים שמסע טוב מתחיל בשלווה, ממשיך בדיוק ומסתיים בזיכרונות שיישארו איתכם לתמיד.<br><br>ב Serenity Travel תמצאו ליווי אישי, הקשבה אמיתית, ותכנון מדויק<br><br>בין אם אתם מחפשים חופשה רומנטית, טיול משפחתי, או חוויה יוקרתית מעבר לים.<br><br>לגלות את העולם בשלווה - זה לא רק סלוגן, זו דרך חיים.&nbsp; &nbsp;&nbsp;<p></p><div class="zappy-inserted-element" id="zappy-element-1771404235328-ms6124dsf" data-element-id="zappy-element-1771404235328-ms6124dsf" data-element-type="paragraph" style="max-width: 516px; margin: 20px auto; text-align: center; width: 100%;"><font color="#808000">שלום שלום</font></div><p id="element-saved-1771404278104-hi0kxxe1nhn" class="text-base text-gray-700 leading-relaxed" style="color: #f00f0f;" data-element-type="paragraph">Enter your paragraph text...</p>
+        <p style="font-size: 16px; line-height: 1.6; color: rgb(44, 62, 80); opacity: 0.8; font-family: system-ui, -apple-system, sans-serif; margin-bottom: 20px;">&nbsp; סוכנות נסיעות שמתמחה במסעות רגועים,אלגנטיים ומותאמים אישית.<br><br></p><p style="">אנחנו כאן כדי להפוך כל חלום למסע. אחרי שנים של אהבה לטיולים, תרבויות ואנשים, החלטנו להפוך את התשוקה שלנו למקצוע  וללוות אתכם בדרך לחוויות בלתי נשכחות.אנחנו מאמינים שמסע טוב מתחיל בשלווה, ממשיך בדיוק ומסתיים בזיכרונות שיישארו איתכם לתמיד.</p>ב Serenity Travel תמצאו ליווי אישי, הקשבה אמיתית, ותכנון מדויק<br><br>בין אם אתם מחפשים חופשה רומנטית, טיול משפחתי, או חוויה יוקרתית מעבר לים.<br><br>לגלות את העולם בשלווה - זה לא רק סלוגן, זו דרך חיים.  אנחנו כאן כדי להפוך כל חלום למסע.<br><br>אחרי שנים של אהבה לטיולים, תרבויות ואנשים, החלטנו להפוך את התשוקה שלנו למקצוע וללוות אתכם בדרך לחוויות בלתי נשכחות.<br><br>אנחנו מאמינים שמסע טוב מתחיל בשלווה, ממשיך בדיוק ומסתיים בזיכרונות שיישארו איתכם לתמיד.<br><br>ב Serenity Travel תמצאו ליווי אישי, הקשבה אמיתית, ותכנון מדויק<br><br>בין אם אתם מחפשים חופשה רומנטית, טיול משפחתי, או חוויה יוקרתית מעבר לים.<br><br>לגלות את העולם בשלווה - זה לא רק סלוגן, זו דרך חיים.&nbsp; &nbsp;&nbsp;<div class="zappy-inserted-element" id="zappy-element-1771404235328-ms6124dsf" data-element-id="zappy-element-1771404235328-ms6124dsf" data-element-type="paragraph" style="max-width: 516px; margin: 20px auto; text-align: center; width: 100%;"><font color="#808000">שלום שלום</font></div><p id="element-saved-1771404278104-hi0kxxe1nhn" class="text-base text-gray-700 leading-relaxed" style="color: #f00f0f;" data-element-type="paragraph">Enter your paragraph text...</p>
         <a href="#" style="display: inline-block; width: fit-content; padding: 10px 24px; background: #6B9BD1; color: white; border-radius: 6px; text-decoration: none; font-size: 15px; font-weight: 500; font-family: system-ui, -apple-system, sans-serif;">למד עוד</a>
       </div>
-    <img data-placeholder="layout-image-1771403775853-g8qjbxn2w" data-context="תיאור תמונה" data-zappy-editable-image="true" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%236B9BD1;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%236B9BD120;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23grad)'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial, sans-serif' font-size='18' fill='white' text-anchor='middle' dy='.3em' font-weight='500'%3E%D7%AA%D7%99%D7%90%D7%95%D7%A8%20%D7%AA%D7%9E%D7%95%D7%A0%D7%94%3C/text%3E%3C/svg%3E" alt="תיאור תמונה" style="width: 457px; height: auto; display: block; border-radius: 8px; object-fit: cover; object-position: 50% 50%; max-width: none" class="layout-placeholder-image zappy-editable-image" data-element-type="image" data-element-id="img-1771403776747-qen86k6bz" data-resize-handler-attached="true">
+    <img data-placeholder="layout-image-1771403775853-g8qjbxn2w" data-context="תיאור תמונה" data-zappy-editable-image="true" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%236B9BD1;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%236B9BD120;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23grad)'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial, sans-serif' font-size='18' fill='white' text-anchor='middle' dy='.3em' font-weight='500'%3E%D7%AA%D7%99%D7%90%D7%95%D7%A8%20%D7%AA%D7%9E%D7%95%D7%A0%D7%94%3C/text%3E%3C/svg%3E" alt="תיאור תמונה" style="width: 457px; height: auto; display: block; border-radius: 8px; object-fit: cover; object-position: 50% 50%; max-width: none" class="layout-placeholder-image zappy-editable-image" data-element-type="image" data-element-id="img-1771403776747-qen86k6bz">
   </div>
   </div>
 </section>
@@ -790,8 +790,8 @@ SERENITY TRAVEL
 <section class="packages-preview" id="zappy-section-2" style="position: relative; overflow: hidden; background-color: #ffffff; --zappy-bg-color: #ffffff" data-zappy-bg-type="color" data-zappy-bg-color="#ffffff" data-zappy-bg-image="" data-zappy-bg-overlay-color="#000000" data-zappy-bg-overlay-opacity="30" data-zappy-bg-video-type="" data-zappy-bg-video-url="">
 <div class="container" style="position: relative; z-index: 2">
 <h2 style="text-align: center"></h2><h1 style="text-align: center;"></h1><h2 style=""><span><span><font color="#000000">קפריסין - היעד החם הבא לקיץ</font></span></span></h2>
-<div class="packages-grid zappy-preserve-css-grid" data-original-item-width="316" data-original-gap="32px" style="display: grid; --zappy-grid-cols: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);" id="zappy-auto-grid-1770656006763-ia4iiu" data-zappy-auto-grid="true" data-zappy-explicit-columns="true" data-zappy-display-mode="carousel"><div class="package-card" style="" data-grid-item-index="0">
-<div data-zappy-zoom-wrapper="true" data-element-id="img-1768828929007-h6sdz76bk" data-element-type="image" data-zappy-zoom-wrapper-width="316px" data-zappy-zoom-wrapper-height="250px" data-zappy-zoom-wrapper-width-mode="px" data-zappy-zoom-clip="true" data-zappy-wrapper-margins-applied="true" style="position: relative !important; overflow: hidden !important; width: 316px !important; max-width: 100% !important; margin-left: auto !important; margin-right: auto !important; height: 250px !important; display: block !important; min-height: 150px !important;"><img data-placeholder="service-1" data-context="משפחה מטיילת ברחובות רומנטיים של פריז, מגדל אייפל ברקע, אווירה קסומה" src="/assets/business-general-service-upload-1770662804625.webp" alt="חבילת נופש לאירופה - פריז ורומא" data-element-type="image" data-element-id="img-1768828929007-h6sdz76bk" class="zappy-editable-image" data-original-position="static" style="object-position: 50% 50%; position: absolute !important; width: 100% !important; height: 100% !important; object-fit: fill !important; max-width: none !important; margin: 0px !important; max-height: none !important; display: block !important; left: 0% !important; top: 0% !important;" data-zappy-original-width="316" data-zappy-original-height="250" data-zappy-zoom="0.5" data-resize-handler-attached="true"></div>
+<div class="packages-grid zappy-preserve-css-grid" data-original-item-width="316" data-original-gap="32px" style="display: grid; --zappy-grid-cols: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);" id="zappy-auto-grid-1770656006763-ia4iiu" data-zappy-auto-grid="true" data-zappy-explicit-columns="true" data-zappy-display-mode="carousel"><div class="package-card" style="">
+<div data-zappy-zoom-wrapper="true" data-element-id="img-1768828929007-h6sdz76bk" data-element-type="image" data-zappy-zoom-wrapper-width="316px" data-zappy-zoom-wrapper-height="250px" data-zappy-zoom-wrapper-width-mode="px" data-zappy-zoom-clip="true" data-zappy-wrapper-margins-applied="true" style="position: relative !important; overflow: hidden !important; width: 316px !important; max-width: 100% !important; margin-left: auto !important; margin-right: auto !important; height: 250px !important; display: block !important; min-height: 150px !important;"><img data-placeholder="service-1" data-context="משפחה מטיילת ברחובות רומנטיים של פריז, מגדל אייפל ברקע, אווירה קסומה" src="/assets/business-general-service-upload-1770662804625.webp" alt="חבילת נופש לאירופה - פריז ורומא" data-element-type="image" data-element-id="img-1768828929007-h6sdz76bk" class="zappy-editable-image" data-original-position="static" style="object-position: 50% 50%; position: absolute !important; width: 100% !important; height: 100% !important; object-fit: fill !important; max-width: none !important; margin: 0px !important; max-height: none !important; display: block !important; left: 0% !important; top: 0% !important;" data-zappy-original-width="316" data-zappy-original-height="250" data-zappy-zoom="0.5"></div>
 <div class="package-content">
 <h3 style="">לרנקה, קפריסין</h3>
 <p style="">לרנקה היא אחת הערים העתיקות בקפריסין. הוקמה על חורבות העיר קיטיון העתיקה, עם השפעות פיניקיות, יווניות ונוצריות. פחות "עיר תיירות" קלאסית ויותר קפריסין אמיתית.<br><br><br><br><br><br><br><br><b>
@@ -841,8 +841,8 @@ SERENITY TRAVEL
 אביב וסתיו. הקיץ עמוס וחם, החורף רגוע מאוד.&nbsp; &nbsp;</p>
 
 </div>
-</div><div class="package-card" style="" data-grid-item-index="1">
-<div data-zappy-zoom-wrapper="true" data-element-id="img-1768828929007-7nwq3n6o9" data-element-type="image" data-zappy-zoom-wrapper-width="316px" data-zappy-zoom-wrapper-height="250px" data-zappy-zoom-wrapper-width-mode="px" data-zappy-zoom-clip="true" data-zappy-wrapper-margins-applied="true" style="position: relative !important; overflow: hidden !important; width: 316px !important; max-width: 100% !important; margin-left: auto !important; margin-right: auto !important; height: 250px !important; display: block !important; min-height: 150px !important;"><img data-placeholder="service-2" data-context="משפחה שוחה בים הכחול הצלול של האיים היווניים, חופים לבנים ושמש זוהרת" src="/assets/business-general-service-upload-1770662819100.webp" alt="חבילת נופש לאיים היווניים" data-element-type="image" data-element-id="img-1768828929007-7nwq3n6o9" class="zappy-editable-image" data-original-position="static" style="object-position: 50% 50%; position: absolute !important; width: 100% !important; height: 100% !important; object-fit: fill !important; max-width: none !important; margin: 0px !important; max-height: none !important; display: block !important; left: 0% !important; top: 0% !important;" data-zappy-original-width="316" data-zappy-original-height="250" data-zappy-zoom="0.5" data-resize-handler-attached="true"></div>
+</div><div class="package-card" style="">
+<div data-zappy-zoom-wrapper="true" data-element-id="img-1768828929007-7nwq3n6o9" data-element-type="image" data-zappy-zoom-wrapper-width="316px" data-zappy-zoom-wrapper-height="250px" data-zappy-zoom-wrapper-width-mode="px" data-zappy-zoom-clip="true" data-zappy-wrapper-margins-applied="true" style="position: relative !important; overflow: hidden !important; width: 316px !important; max-width: 100% !important; margin-left: auto !important; margin-right: auto !important; height: 250px !important; display: block !important; min-height: 150px !important;"><img data-placeholder="service-2" data-context="משפחה שוחה בים הכחול הצלול של האיים היווניים, חופים לבנים ושמש זוהרת" src="/assets/business-general-service-upload-1770662819100.webp" alt="חבילת נופש לאיים היווניים" data-element-type="image" data-element-id="img-1768828929007-7nwq3n6o9" class="zappy-editable-image" data-original-position="static" style="object-position: 50% 50%; position: absolute !important; width: 100% !important; height: 100% !important; object-fit: fill !important; max-width: none !important; margin: 0px !important; max-height: none !important; display: block !important; left: 0% !important; top: 0% !important;" data-zappy-original-width="316" data-zappy-original-height="250" data-zappy-zoom="0.5"></div>
 <div class="package-content">
 <h3 style="">פאפוס, קפריסין</h3>
 <p style="">&nbsp;פאפוס היא אתר מורשת עולמית של אונסק"ו. לפי המיתולוגיה היוונית, אפרודיטה נולדה כאן. העיר מלאה פסיפסים, קברים ואתרים עתיקים.<br><br><br><br><br><br><br><br><b>
@@ -894,8 +894,8 @@ SERENITY TRAVEL
 פחות מתאים לצעירים שמחפשים מסיבות<br><br><br><br>&nbsp;<br><br><br><br><b>מתי הכי כדאי להגיע:</b>&nbsp;אביב וסתיו. גם חורף <b>מתאים לטיולי טבע והיסטוריה.</b>&nbsp; &nbsp;</p>
 
 </div>
-</div><div class="package-card" style="" data-grid-item-index="2">
-<div data-zappy-zoom-wrapper="true" data-element-id="img-1768828929007-flw3pbxko" data-element-type="image" data-zappy-zoom-wrapper-width="316px" data-zappy-zoom-wrapper-height="250px" data-zappy-zoom-wrapper-width-mode="px" data-zappy-zoom-clip="true" data-zappy-wrapper-margins-applied="true" style="position: relative !important; overflow: hidden !important; width: 316px !important; max-width: 100% !important; margin-left: auto !important; margin-right: auto !important; height: 250px !important; display: block !important; min-height: 150px !important;"><img data-placeholder="service-3" data-context="משפחה עם ילדים בפארק שעשועים של דיסני, טירת סינדרלה ברקע, אווירה קסומה" src="/assets/business-general-service-upload-1770662978068.webp" alt="חבילת נופש לפלורידה - דיסני וורלד" data-element-type="image" data-element-id="img-1768828929007-flw3pbxko" class="zappy-editable-image" data-original-position="static" style="object-position: 50% 50% !important; position: absolute !important; width: 100% !important; height: 100% !important; object-fit: fill !important; max-width: none !important; margin: 0px !important; max-height: none !important; display: block !important; left: 0% !important; top: 0% !important;" data-zappy-original-width="316" data-zappy-original-height="250" data-zappy-zoom="0.5" data-resize-handler-attached="true"></div>
+</div><div class="package-card" style="">
+<div data-zappy-zoom-wrapper="true" data-element-id="img-1768828929007-flw3pbxko" data-element-type="image" data-zappy-zoom-wrapper-width="316px" data-zappy-zoom-wrapper-height="250px" data-zappy-zoom-wrapper-width-mode="px" data-zappy-zoom-clip="true" data-zappy-wrapper-margins-applied="true" style="position: relative !important; overflow: hidden !important; width: 316px !important; max-width: 100% !important; margin-left: auto !important; margin-right: auto !important; height: 250px !important; display: block !important; min-height: 150px !important;"><img data-placeholder="service-3" data-context="משפחה עם ילדים בפארק שעשועים של דיסני, טירת סינדרלה ברקע, אווירה קסומה" src="/assets/business-general-service-upload-1770662978068.webp" alt="חבילת נופש לפלורידה - דיסני וורלד" data-element-type="image" data-element-id="img-1768828929007-flw3pbxko" class="zappy-editable-image" data-original-position="static" style="object-position: 50% 50% !important; position: absolute !important; width: 100% !important; height: 100% !important; object-fit: fill !important; max-width: none !important; margin: 0px !important; max-height: none !important; display: block !important; left: 0% !important; top: 0% !important;" data-zappy-original-width="316" data-zappy-original-height="250" data-zappy-zoom="0.5"></div>
 <div class="package-content">
 <h3 style="">לימסול, קפריסין</h3>
 <p style="">&nbsp;עיר נמל חשובה מימי הביניים היום זו העיר הכי מודרנית בקפריסין.<br><br><b>מה עושים שם:</b><br><br></p><ul><li style="">חופים מסודרים
@@ -907,11 +907,11 @@ SERENITY TRAVEL
 <br><br>הטיילת הארוכה
 <br><br>העיר העתיקהטירת לימסול&nbsp;<br><br><b>מתאים ל:</b><br><br>זוגות
 <br><br>צעירים
-<br><br>משפחות עם בני נוער<br><br>פחות מתאים למי שמחפש שקט מוחלט&nbsp;<br><br><b>מתי הכי כדאי להגיע</b><br><br>אביב וסתיו.&nbsp;בקיץ חם ועמוס, אבל עם וייב מעולה.&nbsp; &nbsp;<p></p>
+<br><br>משפחות עם בני נוער<br><br>פחות מתאים למי שמחפש שקט מוחלט&nbsp;<br><br><b>מתי הכי כדאי להגיע</b><br><br>אביב וסתיו.&nbsp;בקיץ חם ועמוס, אבל עם וייב מעולה.&nbsp; &nbsp;
 
 </div>
-</div><div class="package-card" style="background-color: rgb(255, 255, 255) !important;" data-grid-item-index="3">
-<div data-zappy-zoom-wrapper="true" data-element-id="new-grid-img-1770662986956-0-nbe4ycnmu" data-element-type="image" data-zappy-zoom-wrapper-width="316px" data-zappy-zoom-wrapper-height="250px" data-zappy-zoom-wrapper-width-mode="px" data-zappy-zoom-clip="true" data-zappy-wrapper-margins-applied="true" style="position: relative !important; overflow: hidden !important; width: 316px !important; max-width: 100% !important; margin-left: auto !important; margin-right: auto !important; height: 250px !important; display: block !important; min-height: 150px !important;"><img data-placeholder="image-placeholder" data-context="משפחה עם ילדים בפארק שעשועים של דיסני, טירת סינדרלה ברקע, אווירה קסומה" src="/assets/business-general-service-upload-1770663062587.webp" alt="Image placeholder" data-element-type="image" data-element-id="new-grid-img-1770662986956-0-nbe4ycnmu" class="zappy-editable-image" data-original-position="static" style="cursor: pointer; object-position: 50% 50%; object-fit: fill !important; position: absolute !important; width: 100% !important; height: 100% !important; max-width: none !important; margin: 0px !important; max-height: none !important; display: block !important; left: 0% !important; top: 0% !important;" id="new-grid-img-1770662986956-0-nbe4ycnmu" data-ai-slot="grid-item-image" data-zappy-original-width="316" data-zappy-original-height="250" data-zappy-zoom="0.5" data-resize-handler-attached="true"></div>
+</div><div class="package-card" style="background-color: rgb(255, 255, 255) !important;">
+<div data-zappy-zoom-wrapper="true" data-element-id="new-grid-img-1770662986956-0-nbe4ycnmu" data-element-type="image" data-zappy-zoom-wrapper-width="316px" data-zappy-zoom-wrapper-height="250px" data-zappy-zoom-wrapper-width-mode="px" data-zappy-zoom-clip="true" data-zappy-wrapper-margins-applied="true" style="position: relative !important; overflow: hidden !important; width: 316px !important; max-width: 100% !important; margin-left: auto !important; margin-right: auto !important; height: 250px !important; display: block !important; min-height: 150px !important;"><img data-placeholder="image-placeholder" data-context="משפחה עם ילדים בפארק שעשועים של דיסני, טירת סינדרלה ברקע, אווירה קסומה" src="/assets/business-general-service-upload-1770663062587.webp" alt="Image placeholder" data-element-type="image" data-element-id="new-grid-img-1770662986956-0-nbe4ycnmu" class="zappy-editable-image" data-original-position="static" style="cursor: pointer; object-position: 50% 50%; object-fit: fill !important; position: absolute !important; width: 100% !important; height: 100% !important; max-width: none !important; margin: 0px !important; max-height: none !important; display: block !important; left: 0% !important; top: 0% !important;" id="new-grid-img-1770662986956-0-nbe4ycnmu" data-ai-slot="grid-item-image" data-zappy-original-width="316" data-zappy-original-height="250" data-zappy-zoom="0.5"></div>
 <div class="package-content">
 <h3 style="cursor: text;">איה נאפה, קפריסין</h3>
 <p style="cursor: text;">&nbsp;איה נאפה התחילה ככפר דייגים קטן. השם מגיע מ"איה" - קדושה ו"נאפה" - יער. במרכז העיירה עומד מנזר מהמאה ה-16, תזכורת לעבר השקט של המקום לפני שהפך ליעד תיירות בינלאומי.<br><br><br><br><br><br><br><br><b>
@@ -1127,32 +1127,32 @@ WaterWorld פארק המים&nbsp;<br><br><br><br><br><br><br><br><b>מתאים 
 <div class="feature-icon" id="zappy-drop-d38ipxdww">
 <i class="fas fa-heart" data-element-type="icon" data-element-id="icon-1768828929005-jbtktiixh" data-icon-type="fontawesome" style="pointer-events: auto; cursor: pointer;"></i>
 </div>
-<h3 class="zappy-editable" id="zappy-drop-pni12ka4f">התאמה אישית</h3>
-<p class="zappy-editable" id="zappy-drop-9le1e82oq" style="">כל חבילת נופש מותאמת במיוחד עבורכם. אנחנו מקשיבים לצרכים שלכם ובונים את החופשה המושלמת.</p>
+<h3 class="" id="zappy-drop-pni12ka4f">התאמה אישית</h3>
+<p class="" id="zappy-drop-9le1e82oq" style="">כל חבילת נופש מותאמת במיוחד עבורכם. אנחנו מקשיבים לצרכים שלכם ובונים את החופשה המושלמת.</p>
 </div><div class="feature" id="zappy-drop-o6ez36js8" style="">
 <div class="feature-icon" id="zappy-drop-y0rjpkab4">
 <i class="fas fa-shield-alt" data-element-type="icon" data-element-id="icon-1768828929005-59ddemb6q" data-icon-type="fontawesome" style="pointer-events: auto; cursor: pointer;"></i>
 </div>
-<h3 class="zappy-editable" id="zappy-drop-bz16v77zm">ביטחון ואמינות</h3>
-<p class="zappy-editable" id="zappy-drop-hh56okdmi" style="">אנחנו עובדים רק עם ספקים מהימנים כדי להבטיח שהחופשה שלכם תהיה בטוחה ונטולת דאגות.</p>
+<h3 class="" id="zappy-drop-bz16v77zm">ביטחון ואמינות</h3>
+<p class="" id="zappy-drop-hh56okdmi" style="">אנחנו עובדים רק עם ספקים מהימנים כדי להבטיח שהחופשה שלכם תהיה בטוחה ונטולת דאגות.</p>
 </div><div class="feature" id="zappy-drop-q0d8t2mpb" style="">
 <div class="feature-icon" id="zappy-drop-16t6ccm2j">
 <i class="fas fa-dollar-sign" data-element-type="icon" data-element-id="icon-1768828929005-fh8i8poz3" data-icon-type="fontawesome" style="pointer-events: auto; cursor: pointer;"></i>
 </div>
-<h3 class="zappy-editable" id="zappy-drop-ryq5hd7wy">מחירים הוגנים</h3>
-<p class="zappy-editable" id="zappy-drop-41dy1gjad" style=""><font color="#000000">דילים וחבילות נופש במחירים תחרותיים.</font><font color="#000000">אנחנו מבטיחים את הערך הטוב ביותר עבור הכסף שלכם.</font></p>
+<h3 class="" id="zappy-drop-ryq5hd7wy">מחירים הוגנים</h3>
+<p class="" id="zappy-drop-41dy1gjad" style=""><font color="#000000">דילים וחבילות נופש במחירים תחרותיים.</font><font color="#000000">אנחנו מבטיחים את הערך הטוב ביותר עבור הכסף שלכם.</font></p>
 </div><div class="feature" id="zappy-drop-rkm6e3t2q" style="">
 <div class="feature-icon" id="zappy-drop-0hqefy9uz">
 <i class="fas fa-headset" data-element-type="icon" data-element-id="icon-1768828929005-jrru4umjw" data-icon-type="fontawesome" style="pointer-events: auto; cursor: pointer;"></i>
 </div>
-<h3 class="zappy-editable" id="zappy-drop-aacnd52uk">שירות 24/7</h3>
-<p class="zappy-editable" id="zappy-drop-qtphb6rue" style=""><font color="#000000">אנחנו זמינים עבורכם לפני, במהלך ואחרי הטיול. תמיכה מלאה בכל שלב של החופשה.</font></p>
+<h3 class="" id="zappy-drop-aacnd52uk">שירות 24/7</h3>
+<p class="" id="zappy-drop-qtphb6rue" style=""><font color="#000000">אנחנו זמינים עבורכם לפני, במהלך ואחרי הטיול. תמיכה מלאה בכל שלב של החופשה.</font></p>
 </div><div class="feature" id="zappy-drop-5oawe71ru" style="">
 <div class="feature-icon" id="zappy-drop-zrisj2l0a">
 <i class="fas fa-globe" data-element-type="icon" data-element-id="icon-1768828929005-1eb8xdfmm" data-icon-type="fontawesome" style="pointer-events: auto; cursor: pointer;"></i>
 </div>
-<h3 class="zappy-editable" id="zappy-drop-bifuwpqrk">יעדים מגוונים</h3>
-<p class="zappy-editable" id="zappy-drop-lr9vyauxx" style=""><font color="#000000">מאירופה ועד אסיה, מאמריקה ועד אוסטרליה - אנחנו מציעים חבילות נופש בהתאמה אישית לכל יעד בעולם.</font></p>
+<h3 class="" id="zappy-drop-bifuwpqrk">יעדים מגוונים</h3>
+<p class="" id="zappy-drop-lr9vyauxx" style=""><font color="#000000">מאירופה ועד אסיה, מאמריקה ועד אוסטרליה - אנחנו מציעים חבילות נופש בהתאמה אישית לכל יעד בעולם.</font></p>
 </div></div>
 </div>
 </section>
@@ -1176,7 +1176,7 @@ WaterWorld פארק המים&nbsp;<br><br><br><br><br><br><br><br><b>מתאים 
 
 <section id="layout-1770715246221" class="layout-section" data-zappy-component="true" style="width: 100%; padding: 60px 0px; direction: rtl;" data-component-id="empty-section">
   <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 1.5rem;">
-    <p style="font-size: 16px; line-height: 1.7; color: rgb(44, 62, 80); opacity: 0.5; text-align: center; font-family: system-ui, -apple-system, sans-serif;">הצטרפו לקבוצה שלי בפייסבוק</p><div class="zappy-inserted-element" id="zappy-element-1770715262443-8v3o1dxgg" data-element-id="zappy-element-1770715262443-8v3o1dxgg" data-element-type="icon" data-zappy-newly-inserted="true" style="max-width: 1152px; margin: 20px auto; text-align: center; display: flex; justify-content: center; width: 100%;"><a data-zappy-click-action="link" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit; display: contents;"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewbox="0 0 24 24" data-icon="mingcute:facebook-line" data-iconify="mingcute:facebook-line" data-element-type="icon" data-icon-type="iconify" data-size-adjusted="true" style="width: 64px; height: 64px; display: inline-block; vertical-align: -0.125em; cursor: pointer;" class="iconify iconify--mingcute" data-zappy-click-action="link"><g fill="none" fill-rule="evenodd"><path d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"></path><path fill="currentColor" d="M4 12a8 8 0 1 1 9 7.938V14h2a1 1 0 1 0 0-2h-2v-2a1 1 0 0 1 1-1h.5a1 1 0 1 0 0-2H14a3 3 0 0 0-3 3v2H9a1 1 0 1 0 0 2h2v5.938A8 8 0 0 1 4 12m8 10c5.523 0 10-4.477 10-10S17.523 2 12 2S2 6.477 2 12s4.477 10 10 10"></path></g></svg></a></div>
+    <p style="font-size: 16px; line-height: 1.7; color: rgb(44, 62, 80); opacity: 0.5; text-align: center; font-family: system-ui, -apple-system, sans-serif;"><font color="#1a1a1a">הצטרפו לקבוצה שלי בפייסבוק</font></p><div class="zappy-inserted-element" id="zappy-element-1770715262443-8v3o1dxgg" data-element-id="zappy-element-1770715262443-8v3o1dxgg" data-element-type="icon" data-zappy-newly-inserted="true" style="max-width: 1152px; margin: 20px auto; text-align: center; display: flex; justify-content: center; width: 100%;"><a data-zappy-click-action="link" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit; display: contents;"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24" data-icon="mingcute:facebook-line" data-iconify="mingcute:facebook-line" data-element-type="icon" data-icon-type="iconify" data-size-adjusted="true" style="width: 64px; height: 64px; display: inline-block; vertical-align: -0.125em; cursor: pointer;" class="iconify iconify--mingcute" data-zappy-click-action="link"><g fill="none" fill-rule="evenodd"><path d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"></path><path fill="currentColor" d="M4 12a8 8 0 1 1 9 7.938V14h2a1 1 0 1 0 0-2h-2v-2a1 1 0 0 1 1-1h.5a1 1 0 1 0 0-2H14a3 3 0 0 0-3 3v2H9a1 1 0 1 0 0 2h2v5.938A8 8 0 0 1 4 12m8 10c5.523 0 10-4.477 10-10S17.523 2 12 2S2 6.477 2 12s4.477 10 10 10"></path></g></svg></a></div>
   </div>
 </section>
 
