@@ -868,6 +868,324 @@ body.accessibility-widget-visible ._access-menu {
   }
 }
 
+/* Added Component Styles */
+.interactive-content-section {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, var(--secondary-color) 0%, #ffffff 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.interactive-content-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, var(--accent-color) 0%, transparent 70%);
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.image-column {
+  position: relative;
+}
+
+.image-wrapper {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.image-wrapper:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.2);
+}
+
+.section-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-height: 500px;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 0%, rgba(107, 155, 209, 0.3) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.image-wrapper:hover .image-overlay {
+  opacity: 1;
+}
+
+.text-column {
+  padding: 20px;
+}
+
+.text-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin: 0;
+  line-height: 1.2;
+  transition: color 0.3s ease;
+}
+
+.section-title:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.editable-text-area {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-color);
+  min-height: 120px;
+  padding: 16px;
+  border: 2px dashed transparent;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.editable-text-area:hover {
+  border-color: var(--accent-color);
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.editable-text-area:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  background: white;
+  box-shadow: 0 4px 12px rgba(107, 155, 209, 0.1);
+}
+
+.editable-text-area[data-placeholder]:empty::before {
+  content: attr(data-placeholder);
+  color: #999;
+  font-style: italic;
+}
+
+.editable-text-area p {
+  margin: 0 0 12px 0;
+}
+
+.editable-text-area p:last-child {
+  margin-bottom: 0;
+}
+
+.features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 8px 0;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0;
+  transition: transform 0.2s ease;
+}
+
+.feature-item:hover {
+  transform: translateX(-5px);
+}
+
+.feature-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background: var(--accent-color);
+  color: white;
+  border-radius: 50%;
+  font-size: 0.9rem;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.feature-text {
+  font-size: 1rem;
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+.interactive-cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 32px;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(107, 155, 209, 0.3);
+  position: relative;
+  overflow: hidden;
+  align-self: flex-start;
+}
+
+.interactive-cta-button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.interactive-cta-button:hover {
+  background: #5a88bc;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(107, 155, 209, 0.4);
+}
+
+.interactive-cta-button:hover::before {
+  opacity: 1;
+}
+
+.interactive-cta-button:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 15px rgba(107, 155, 209, 0.3);
+}
+
+.interactive-cta-button:focus {
+  outline: 3px solid var(--accent-color);
+  outline-offset: 3px;
+}
+
+.button-text {
+  position: relative;
+  z-index: 1;
+}
+
+.button-icon {
+  font-size: 1.3rem;
+  transition: transform 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.interactive-cta-button:hover .button-icon {
+  transform: translateX(-5px);
+}
+
+/* Tablet Styles */
+@media (max-width: 968px) {
+  .interactive-content-section {
+    padding: 60px 20px;
+  }
+  
+  .content-grid {
+    gap: 40px;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .editable-text-area {
+    font-size: 1rem;
+  }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .interactive-content-section {
+    padding: 50px 16px;
+  }
+  
+  .content-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .image-column {
+    order: 1;
+  }
+  
+  .text-column {
+    order: 2;
+    padding: 0;
+  }
+  
+  .section-title {
+    font-size: 1.75rem;
+  }
+  
+  .editable-text-area {
+    font-size: 0.95rem;
+    padding: 12px;
+  }
+  
+  .interactive-cta-button {
+    width: 100%;
+    justify-content: center;
+    padding: 14px 24px;
+  }
+  
+  .features-list {
+    gap: 10px;
+  }
+  
+  .feature-text {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.5rem;
+  }
+  
+  .editable-text-area {
+    font-size: 0.9rem;
+  }
+  
+  .interactive-cta-button {
+    font-size: 1rem;
+    padding: 12px 20px;
+  }
+}
+
 /* ========== RTL MOBILE NAVBAR FIX (zappy-rtl-mobile-fix) ========== */
 /* High-specificity rules to ensure RTL positioning wins over any [lang="en"] conflicts */
 /* For RTL sites: hamburger on RIGHT, phone on LEFT (mirror of LTR layout) */
