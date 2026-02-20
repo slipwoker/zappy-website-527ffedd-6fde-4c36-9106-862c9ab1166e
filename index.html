@@ -734,17 +734,312 @@
 
 
 
-<section class="hero" id="zappy-section-0" style="min-height: 587px !important; height: 587px !important;">
-<div data-zappy-zoom-wrapper="true" data-element-id="img-1768821115865-vwmam9ygp" data-element-type="image" data-zappy-zoom-wrapper-width-mode="full" data-zappy-zoom-clip="true" data-zappy-wrapper-margins-applied="true" style="position: absolute !important; top: 0px !important; left: 0px !important; width: 100% !important; height: 100% !important; max-width: none !important; margin-left: 0px !important; margin-right: 0px !important; display: block !important; z-index: 1 !important; overflow: hidden !important; min-height: 150px !important;"><img data-placeholder="hero-1" data-context="משפחה שמחה נהנית מנופש טרופי יוקרתי על חוף ים בשקיעה, עם דקלים ורוגע" src="/assets/serenity-travel-hero-hero-1-1768826789196-r8ks6z.webp" alt="משפחה נהנית מחופשה יוקרתית על החוף" class="hero-img zappy-editable-image" data-element-type="image" data-element-id="img-1768821115865-vwmam9ygp" style="object-fit: cover !important; width: 100% !important; height: 206.735% !important; object-position: 45% 36% !important; margin: 0px !important; position: absolute !important; max-width: none !important; display: block !important; left: 0% !important; top: -38.4246% !important; max-height: none !important;" data-zappy-zoom="1" data-resize-handler-attached="true"></div>
-<div class="hero-overlay"></div>
-<div class="hero-content">
-<h1 style="color: #A8D5BA;"><font color="#ffffff">טיולים שיוצרים זיכרונות לכל החיים</font></h1>
-<h3 style=""></h3><h3 style="">חבילות נופש בהתאמה אישית - מהרגע שאתם חולמים ועד לרגע שאתם חוזרים הביתה</h3>
-<div class="hero-cta" style="">
-
-<a href="/contact0528778410" class="btn btn-primary" data-element-type="button" data-element-id="btn-1768821115860-pfbzqc52w" data-native-element="true" style="outline: none; border-color: rgb(255, 255, 255) !important; color: var(--light-text, #ffffff) !important; background-color: rgb(255, 255, 255) !important; background-image: none !important;" data-text-color="light"><font color="#025e6e">קבלו הצעת מחיר</font></a>
-</div>
-</div>
+<section style="position: relative; width: 100%; max-width: 100%; box-sizing: border-box; min-height: 100vh; overflow: hidden; margin: 0; padding: 0; display: flex; align-items: center; justify-content: center;" data-zappy-section="true" class="section">
+  <style>
+    .hero-serenity {
+      position: relative;
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    
+    .hero-serenity__bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      transform: scale(1.1);
+      animation: zoomOut 20s ease-out forwards;
+    }
+    
+    @keyframes zoomOut {
+      to {
+        transform: scale(1);
+      }
+    }
+    
+    .hero-serenity__overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      background: linear-gradient(135deg, rgba(107, 155, 209, 0.75) 0%, rgba(168, 213, 186, 0.65) 100%);
+      mix-blend-mode: multiply;
+    }
+    
+    .hero-serenity__overlay::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 30% 50%, rgba(244, 228, 215, 0.2) 0%, transparent 70%);
+      animation: pulseGlow 8s ease-in-out infinite;
+    }
+    
+    @keyframes pulseGlow {
+      0%, 100% {
+        opacity: 0.3;
+      }
+      50% {
+        opacity: 0.6;
+      }
+    }
+    
+    .hero-serenity__content {
+      position: relative;
+      z-index: 10;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 120px 30px 80px;
+      text-align: center;
+      color: var(--bg-white);
+    }
+    
+    .hero-serenity__title {
+      font-size: clamp(3rem, 8vw, 6.5rem);
+      font-weight: 900;
+      line-height: 1.1;
+      margin: 0 0 30px;
+      letter-spacing: -0.02em;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      animation: slideUp 1s ease-out;
+      background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0.85) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .hero-serenity__subtitle {
+      font-size: clamp(1.25rem, 3vw, 1.75rem);
+      font-weight: 400;
+      line-height: 1.6;
+      margin: 0 0 50px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      text-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
+      animation: slideUp 1s ease-out 0.2s backwards;
+      color: rgba(255, 255, 255, 0.95);
+    }
+    
+    .hero-serenity__cta {
+      display: inline-block;
+      position: relative;
+      overflow: hidden;
+      animation: slideUp 1s ease-out 0.4s backwards;
+    }
+    
+    .hero-serenity__button {
+      display: inline-block;
+      padding: 22px 60px;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--text-color);
+      background: var(--bg-white);
+      border: none;
+      border-radius: 50px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+      position: relative;
+      z-index: 1;
+      letter-spacing: 0.5px;
+    }
+    
+    .hero-serenity__button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+      border-radius: 50px;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      z-index: -1;
+    }
+    
+    .hero-serenity__button:hover {
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+      color: var(--bg-white);
+    }
+    
+    .hero-serenity__button:hover::before {
+      opacity: 1;
+    }
+    
+    .hero-serenity__accent {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(244, 228, 215, 0.3) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 2;
+      filter: blur(60px);
+      animation: float 10s ease-in-out infinite;
+    }
+    
+    .hero-serenity__accent--1 {
+      top: 10%;
+      right: 15%;
+      animation-delay: 0s;
+    }
+    
+    .hero-serenity__accent--2 {
+      bottom: 20%;
+      left: 10%;
+      animation-delay: 2s;
+    }
+    
+    @keyframes float {
+      0%, 100% {
+        transform: translate(0, 0) scale(1);
+      }
+      33% {
+        transform: translate(30px, -30px) scale(1.1);
+      }
+      66% {
+        transform: translate(-30px, 30px) scale(0.9);
+      }
+    }
+    
+    .hero-serenity__particles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 3;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    
+    .hero-serenity__particle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.6);
+      border-radius: 50%;
+      animation: particleFloat 15s linear infinite;
+    }
+    
+    .hero-serenity__particle:nth-child(1) {
+      left: 10%;
+      animation-duration: 12s;
+      animation-delay: 0s;
+    }
+    
+    .hero-serenity__particle:nth-child(2) {
+      left: 30%;
+      animation-duration: 18s;
+      animation-delay: 2s;
+    }
+    
+    .hero-serenity__particle:nth-child(3) {
+      left: 50%;
+      animation-duration: 15s;
+      animation-delay: 4s;
+    }
+    
+    .hero-serenity__particle:nth-child(4) {
+      left: 70%;
+      animation-duration: 20s;
+      animation-delay: 1s;
+    }
+    
+    .hero-serenity__particle:nth-child(5) {
+      left: 90%;
+      animation-duration: 14s;
+      animation-delay: 3s;
+    }
+    
+    @keyframes particleFloat {
+      0% {
+        transform: translateY(100vh) translateX(0);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      90% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100px) translateX(50px);
+        opacity: 0;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .hero-serenity__content {
+        padding-top: 100px;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      
+      .hero-serenity__button {
+        padding: 18px 45px;
+        font-size: 1.15rem;
+      }
+      
+      .hero-serenity__accent {
+        width: 200px;
+        height: 200px;
+      }
+    }
+  </style>
+  
+  <div class="hero-serenity">
+    <div class="hero-serenity__bg" style="background-image: url('assets/serenity-travel-hero-hero-1-1768826789196-r8ks6z.webp'); background-size: cover; background-position: center;"></div>
+    
+    <div class="hero-serenity__overlay"></div>
+    
+    <div class="hero-serenity__accent hero-serenity__accent--1"></div>
+    <div class="hero-serenity__accent hero-serenity__accent--2"></div>
+    
+    <div class="hero-serenity__particles">
+      <div class="hero-serenity__particle"></div>
+      <div class="hero-serenity__particle"></div>
+      <div class="hero-serenity__particle"></div>
+      <div class="hero-serenity__particle"></div>
+      <div class="hero-serenity__particle"></div>
+    </div>
+    
+    <div class="hero-serenity__content">
+      <h1 class="hero-serenity__title">טיולים שיוצרים זיכרונות לכל החיים</h1>
+      <h3 class="hero-serenity__subtitle">חבילות נופש בהתאמה אישית - מהרגע שאתם חולמים ועד לרגע שאתם חוזרים הביתה</h3>
+      <div class="hero-serenity__cta">
+        <a href="/contact0528778410" class="hero-serenity__button">קבלו הצעת מחיר</a>
+      </div>
+    </div>
+  </div>
 </section>
 
 
